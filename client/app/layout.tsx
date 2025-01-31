@@ -45,6 +45,8 @@ export default async function RootLayout({
   const { isAuthenticated } = getKindeServerSession();
   const isAuth = await isAuthenticated();
 
+  console.log('Another changes')
+  
   if (isAuth) {
     const user = await getUserData();
     const pages = user?.role.name === USER_ROLES.MANAGEMENT ? management : client;
